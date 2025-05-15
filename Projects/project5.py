@@ -27,8 +27,9 @@ window.tracer(0)
 # Section 2: Setup
 # TODO - create your player character
 s1 = create_sprite("sofia",0,0)
+s2 = create_sprite("pizza",200, 200)
 # TODO - set your background
-set_background("enchancia")
+set_background("enchancia (1)")
 # TODO - set the starting value for your variable
 bites = 0
 # Section 3: Controls
@@ -48,6 +49,7 @@ def move_left():
 def move_right():
 	s1.setheading(0)
 	s1.forward(10)
+
 # TODO - pick keys for each control
 window.onkeypress(move_up, "Up")
 window.onkeypress(move_down, "Down")
@@ -58,20 +60,20 @@ window.listen()
 timer = 0
 while True:
 	time.sleep(0.1)
-	timer += 1  
-	 
+	timer += 1
+	if get_distance(s1,s2)<60:
+		s2.goto(random.randint(-200,200),random.randint(-200,200))
+		bites += 1
     
  	# TODO - code for automatic actions
 
 
 
 
-
-
 	window.update()
 
-	# if :
-	# 	break
+	if bites == 10:
+		break
 	
 
 print("Game Over")
