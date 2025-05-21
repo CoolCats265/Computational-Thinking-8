@@ -61,7 +61,7 @@ timer = 0
 while True:
 	time.sleep(0.1)
 	timer += 1
-	if get_distance(s1,s2)<60:
+	if get_distance(s1,s2)<95:
 		s2.goto(random.randint(-200,200),random.randint(-200,200))
 		bites += 1
     
@@ -77,3 +77,5 @@ while True:
 	
 
 print("Game Over")
+print("Your time was:")
+print(timer/10)
