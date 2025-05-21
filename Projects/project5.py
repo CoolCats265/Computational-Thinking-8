@@ -50,11 +50,21 @@ def move_right():
 	s1.setheading(0)
 	s1.forward(10)
 
+def move():
+	s1.goto(random.randint(-200,200),random.randint(-200,200))
+
+def cat():
+	s3 = create_sprite("fish",30,-20)
+	
+
+
 # TODO - pick keys for each control
 window.onkeypress(move_up, "Up")
 window.onkeypress(move_down, "Down")
 window.onkeypress(move_left, "Left")
 window.onkeypress(move_right, "Right")
+window.onkeypress(move, "m")
+window.onkeypress(cat, "l")
 # Section 4: Game Loop
 window.listen()
 timer = 0
